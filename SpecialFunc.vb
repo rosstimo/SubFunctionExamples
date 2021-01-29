@@ -1,13 +1,17 @@
-﻿Module SpecialFunc
+﻿Option Strict On
+
+Module SpecialFunc
     Sub main()
 
-        promptUser("hello user")
+        'promptUser("hello user")
 
         For i = 0 To 5
-            storeMessages("hello" & vbNewLine) 'chr(13) & chr(11)
+            'Console.WriteLine(RandomNumberInRange(5))
+            RandomNumberInRange(5)
         Next
 
-        promptUser(storeMessages(""))
+        'storeMessages("hello" & vbNewLine) 'chr(13) & chr(11)
+        'promptUser(storeMessages(""))
         Console.Read()
     End Sub
 
@@ -21,5 +25,17 @@
         Return storedMessages
     End Function
 
+    Function RandomNumberInRange(maxNumber As Integer) As Single
+        Dim value As Integer
+        Dim temp As Single
+        ' Initialize the random-number generator.
+        Randomize(DateTime.Now.Millisecond)
+
+        'value = CInt(Int((6 * Rnd()) + 1))
+        temp = Rnd()
+        Console.WriteLine($"Rnd:{temp} Cint:{CInt(temp)} Int:{Int(temp)}")
+        Return temp
+
+    End Function
 
 End Module
