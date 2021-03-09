@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{620267F0-B008-4F22-A821-14986B919414}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>SubFunctionExamples.SpecialFunc</StartupObject>
+    <StartupObject>SubFunctionExamples.ByValByRef</StartupObject>
     <RootNamespace>SubFunctionExamples</RootNamespace>
     <AssemblyName>SubFunctionExamples</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,6 +69,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ByValByRef.vb" />
+    <Compile Include="OneJobMethods.vb" />
     <Compile Include="SpecialFunc.vb" />
     <Compile Include="SubFunctionExamples.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
