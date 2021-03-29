@@ -1,4 +1,27 @@
-﻿Module OneJobMethods
+﻿Option Strict On
+Option Explicit On
+
+Module OneJobMethods
+
+    Sub main()
+        Dim result As Integer
+        Dim testMyString As String = "Banana"
+        Sum(30, 50)
+        result = Sum(5, 5)
+        Console.WriteLine(result)
+
+        IsANumber(testMyString)
+
+        Console.WriteLine($"is {testMyString} a number? {IsANumber(testMyString)}")
+
+        For i = 0 To 9
+            RunningTotal()
+        Next
+        Console.WriteLine(RunningTotal())
+        Console.WriteLine(RunningTotal(True))
+
+        Console.ReadLine()
+    End Sub
 
     'returns the sum of the two argument variables
     Function Sum(firstNumber As Integer, secondNumber As Integer) As Integer
@@ -29,10 +52,20 @@
         Static _RunningTotal As Integer
         If Not clear Then
             _RunningTotal += 1
+        Else
+            _RunningTotal = 0
         End If
         Return _RunningTotal
     End Function
 
-
+    Function IsANumber(stringToTest As String) As Boolean
+        Dim temp As Integer
+        Try
+            temp = CInt(stringToTest)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
 End Module
